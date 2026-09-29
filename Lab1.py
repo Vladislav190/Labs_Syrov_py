@@ -21,22 +21,25 @@ arctg - через math
 import math
 a = int(input("Введите точность "))
 m,n = map(int,input("Введите члены m n через пробел: ").split())
+if m * n < 0: znak = '-' 
+else: znak = '' 
+t = m/n 
+m,n = abs(m), abs(n)
 now = 0
 i = 0
 proshl = 0
 stepen = pow(10,a+10)
 while True:
     
-    up_dr = (pow(-1,i) * pow(m,2*i+1)) 
+    up_dr = (pow(-1,i) * pow(m,2*i+1)) *stepen
     down_dr = ((2*i + 1)*pow(n,2*i+1))
-    now += int((up_dr/down_dr)*stepen)
+    now += int((up_dr//down_dr))
     if str(proshl)[:a] == str(now)[:a]: break
     i += 1
-    proshl = now
-t = m/n 
+    proshl = now 
 
 print(math.atan(t))
-print('0.' + str(now)[:a])# Учитывать отрицательные числа
+print(znak + '0.' + str(now)[:a])# Учитывать отрицательные числа
 print(i)
 
 
