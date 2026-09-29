@@ -21,26 +21,22 @@ arctg - через math
 import math
 a = int(input("Введите точность "))
 m,n = map(int,input("Введите члены m n через пробел: ").split())
-grad = 0
+now = 0
 i = 0
 proshl = 0
+stepen = pow(10,a+10)
 while True:
     
-    grad += ((pow(-1,i) * pow(m,2*i+1)) / ((2*i + 1)*pow(n,2*i+1)))
-
-    prov = int(grad)
-    prov1 = list(str(grad-prov).split('.'))
-    chisl = str(prov1[1])
-    now = chisl[0:a:1]
-    #print(now, proshl)
-    if proshl == now:
-        break
+    up_dr = (pow(-1,i) * pow(m,2*i+1)) 
+    down_dr = ((2*i + 1)*pow(n,2*i+1))
+    now += int((up_dr/down_dr)*stepen)
+    if str(proshl)[:a] == str(now)[:a]: break
     i += 1
     proshl = now
-t = m/n
-etalon = math.atan(t)
-print(etalon)
-print(f'{int(grad)}.{chisl[0:a:1]}')# Учитывать отрицательные числа
+t = m/n 
+
+print(math.atan(t))
+print('0.' + str(now)[:a])# Учитывать отрицательные числа
 print(i)
 
 
