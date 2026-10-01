@@ -14,8 +14,6 @@ arctg - через math
 приближение (мое значение)
 кол-во членов
 '''
-
-
 #2) Падэ апроксимация для artg
 
 # import math
@@ -48,8 +46,6 @@ arctg - через math
 # if perevert: cel, drob = divmod(((int((math.pi/2)*stepen)) - now), stepen); print(f'{znak}{cel}.{str(drob)[:a]}')
 # else: print(znak + '0.' + '0'*nul + str(now)[:a-nul]) 
 # print(i)
-
-
 
 
 import math
