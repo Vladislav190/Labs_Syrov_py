@@ -16,6 +16,9 @@ arctg - через math
 '''
 #2) Падэ апроксимация для artg
 
+
+ ''''' Метод распределние Тейлора'''''
+
 # import math
 # a = int(input("Введите точность "))
 # m,n = map(int,input("Введите члены m n через пробел: ").split()) 
@@ -48,6 +51,7 @@ arctg - через math
 # print(i)
 
 
+''''' Метод Паде ''''' 
 import math
 import functools
 from fractions import Fraction
