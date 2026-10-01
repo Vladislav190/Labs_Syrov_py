@@ -86,14 +86,18 @@ up, dw = abs(up), abs(dw)
 stepen_pade = pow(10,touch+10)
 
 tg_ug = Fraction(up,dw)
-isl = 0
+isl, prev = 0,0
 while True:
      Pk = Pen(isl,tg_ug)
      Qk = Qen(isl,tg_ug)
-     Qk1 = 1 / Qk 
+     Qk1 = 1 / Fraction(Qk)
      now_pade = Pk*Qk*stepen_pade
      rrrr = now_pade.numerator//now_pade.denominator
-     print(rrrr,'\n')
+     if prev !=0 and abs(rrrr - prev) < 10**10:
+         break
+     prev = rrrr
      isl += 1
 
-     
+print(math.atan(etal))
+print(znaku + str(rrrr // stepen_pade) + '.' + str(rrrr % stepen_pade)[:touch])
+print(isl)
