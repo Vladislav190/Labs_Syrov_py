@@ -53,7 +53,10 @@ arctg - через math
 
 
 import math
+import functools
+from fractions import Fraction
 
+@functools.cache
 def Pen(n, x:str):
      match n:
           case 0:
@@ -63,10 +66,11 @@ def Pen(n, x:str):
           case _:
              return (2*n - 1)*Pen(n-1,x) + pow((n - 1),2) * pow(x,2) * Pen(n-2,x)
 
+@functools.cache 
 def Qen(n, x):
      match n:
           case 0:
-             return 0
+             return 1
           case 1:
              return 1
           case _:
@@ -79,7 +83,17 @@ if up * dw < 0: znaku = '-'
 else: znaku = '' 
 etal = up/dw
 up, dw = abs(up), abs(dw)
-stepen = pow(10,touch+10)
+stepen_pade = pow(10,touch+10)
 
-#while True:
+tg_ug = Fraction(up,dw)
+isl = 0
+while True:
+     Pk = Pen(isl,tg_ug)
+     Qk = Qen(isl,tg_ug)
+     Qk1 = 1 / Qk 
+     now_pade = Pk*Qk*stepen_pade
+     rrrr = now_pade.numerator//now_pade.denominator
+     print(rrrr,'\n')
+     isl += 1
+
      
