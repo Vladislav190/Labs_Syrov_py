@@ -91,13 +91,15 @@ while True:
      Pk = Pen(isl,tg_ug)
      Qk = Qen(isl,tg_ug)
      Qk1 = 1 / Fraction(Qk)
-     now_pade = Pk*Qk*stepen_pade
+     now_pade = Pk*Qk1*stepen_pade
      rrrr = now_pade.numerator//now_pade.denominator
      if prev !=0 and abs(rrrr - prev) < 10**10:
          break
      prev = rrrr
      isl += 1
 
+nool = (touch+10) - len(str(rrrr))
+
 print(math.atan(etal))
-print(znaku + str(rrrr // stepen_pade) + '.' + str(rrrr % stepen_pade)[:touch])
+print(znaku + str(rrrr // stepen_pade) + '.' + '0'*nool + str(rrrr % stepen_pade)[:touch])
 print(isl)
