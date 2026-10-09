@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "raketa"
+version = "0.1.0"
+description = "Этот проект демонстрирует расчет вещественных координаты ракеты/This project demonstrates the calculation of the real coordinates of a rocket."
+
+requires-python = ">=3.9"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
